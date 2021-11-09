@@ -5,6 +5,7 @@ type Data = {
   steps: Array<{
     startURL: string;
     endURLRegexp: string;
+    endURLRegexps: Array<string>;
   }>
 }
 
@@ -17,12 +18,17 @@ export default function handler(
   res.status(200).json({
     steps: [
       {
-        startURL: `https://${host}/pin-start`,
-        endURLRegexp: `^https://${host}/pin-complete$`,
-      },
-      {
         startURL: `https://${host}/anvil-start`,
         endURLRegexp: `^https://${host}/anvil-complete$`,
+        endURLRegexps: [
+          `^https://${host}/anvil-not-complete$`,
+          `^https://${host}/anvil-complete$`
+        ],
+      },
+      {
+        startURL: `https://${host}/pin-start`,
+        endURLRegexp: `^https://${host}/pin-complete$`,
+        endURLRegexps: [`^https://${host}/pin-complete$`],
       },
     ],
   })

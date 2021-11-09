@@ -17,9 +17,9 @@ const AnvilStart: NextPage = () => {
           Anvil Workflow
         </h1>
 
-        <Link href="/anvil-complete">
+        <Link href="/anvil-not-complete">
           <a className={styles.card}>
-            <h2>Complete Anvil &rarr;</h2>
+            <h2>Proceed to next step &rarr;</h2>
           </a>
         </Link>
       </main>
