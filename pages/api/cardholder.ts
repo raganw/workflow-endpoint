@@ -18,7 +18,7 @@ export default function handler(
   res.status(200).json({
     steps: [
       {
-        startURL: `https://${host}/anvil-start`,
+        startURL: `https://app.useanvil.com/form/ganaz/cardholder/NNrKrvXwdsILA6qfUWp3/1`,
         endURLRegexp: `^https://${host}/anvil-complete$`,
         endURLRegexps: [
           `^https://${host}/anvil-not-complete$`,
